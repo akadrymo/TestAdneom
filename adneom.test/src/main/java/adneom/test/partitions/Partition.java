@@ -36,6 +36,14 @@ public class Partition {
 	
 
 	public List<List<Integer>> doPartition(List largeList, Integer targetSize) {
+	
+		StringBuilder builder = new StringBuilder();
+		builder.append("Input data : [targetSize= ");
+		builder.append(targetSize);
+		builder.append("] [largeList=");
+		builder.append(largeList);
+		builder.append("] ");
+		
 
 		List<List<Integer>> output = ListUtils.partition(largeList, targetSize);
 		return output;
