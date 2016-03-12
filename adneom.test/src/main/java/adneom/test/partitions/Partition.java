@@ -11,15 +11,20 @@
 
 package adneom.test.partitions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.collections4.ListUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
 public class Partition {
-
+	
+	//object for login
+	private static final Logger logger = LoggerFactory.getLogger(Partition.class);
+	
+	
 	/**
 	 * doPartition
 	 * 
@@ -27,6 +32,7 @@ public class Partition {
 	 * @param targetSize
 	 * @return
 	 */
+	
 	
 
 	public List<List<Integer>> doPartition(List largeList, Integer targetSize) {
