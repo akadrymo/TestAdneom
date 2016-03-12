@@ -1,5 +1,5 @@
 /**
- * Partition - Manipulation de liste d'entier
+ * Partition - Manipulation d'une liste d'entier
  * 
  * @version 1.0
  * 
@@ -26,10 +26,11 @@ public class Partition {
 	
 	
 	/**
-	 * doPartition
+	 * doPartition est un methode permettant de renvoyer une liste contenant des sous-liste
+	 *             d'une liste d'entier passee en parametre selon un taille donne 
 	 * 
-	 * @param largeList
-	 * @param targetSize
+	 * @param largeList liste d'entier à partitioner
+	 * @param targetSize entier correspondant à la taille de la partition à créer
 	 * @return
 	 */
 	
@@ -45,7 +46,10 @@ public class Partition {
 		builder.append("] ");
 		logger.info (builder.toString());
 
+		//Partitionnement de la liste passe en paramettre selon la taille passé en parametre
 		List<List<Integer>> output = ListUtils.partition(largeList, targetSize);
+		
+		
 		builder.append("Output data : [output");
 		builder.append(output);
 		builder.append("] ");
