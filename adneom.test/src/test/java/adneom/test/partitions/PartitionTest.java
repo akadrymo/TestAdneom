@@ -10,35 +10,39 @@ import org.junit.Test;
 
 public class PartitionTest {
 
-	Partition p = new Partition();
-	List list = null;
+	Partition p;
+	
 
 	@Before
 	public void setUp() throws Exception {
-		list = new ArrayList();
+		p = new Partition();
+	}
+	
+	private List<Integer> createListe()
+	{
+		List list = new ArrayList<Integer>();
+		for (int i = 0; i < 10; i++)
+			list.add(i);
+		
+		return list;
+		
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void tailleNegative() {
-		for (int i = 0; i < 10; i++)
-			list.add(i);
-
-		p.doPartition(list, -1);
+		
+		p.doPartition(createListe(), -1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void tailleZero() {
-		for (int i = 0; i < 10; i++)
-			list.add(i);
-
-		p.doPartition(list, 0);
+		
+		p.doPartition(createListe(), 0);
 	}
 
 	@Test
 	public void tailleSuperieurTailleListe() {
-		for (int i = 0; i < 10; i++)
-			list.add(i);
-
+		
 		List<List<Integer>> expectedoutput = new ArrayList<>();
 		List<Integer> subList = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
@@ -50,13 +54,12 @@ public class PartitionTest {
 		}
 		expectedoutput.add(subList);
 
-		assertEquals(p.doPartition(list, 20), expectedoutput);
+		assertEquals(p.doPartition(createListe(), 20), expectedoutput);
 	}
 
 	@Test
 	public void tailleInferieurTailleListe() {
-		for (int i = 0; i < 10; i++)
-			list.add(i);
+	
 
 		List<List<Integer>> expectedoutput = new ArrayList<>();
 
@@ -71,7 +74,7 @@ public class PartitionTest {
 			expectedoutput.add(subList);
 		}
 
-		assertEquals(p.doPartition(list, 2), expectedoutput);
+		assertEquals(p.doPartition(createListe(), 2), expectedoutput);
 	}
 
 }
