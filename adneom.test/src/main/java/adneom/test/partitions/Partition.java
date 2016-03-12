@@ -43,9 +43,11 @@ public class Partition {
 		builder.append("] [largeList=");
 		builder.append(largeList);
 		builder.append("] ");
-		
+		logger.info (builder.toString());
 
 		List<List<Integer>> output = ListUtils.partition(largeList, targetSize);
+		
+		
 		return output;
 		
 	}
